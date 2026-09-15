@@ -1,4 +1,3 @@
-```yaml
 include:
   - board: bmp_boost
     shield: torabo_tsuki_lp_left
@@ -32,4 +31,3 @@ include:
 
   - board: bmp_boost
     shield: settings_reset
-```
