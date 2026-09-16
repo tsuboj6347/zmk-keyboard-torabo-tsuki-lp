@@ -1,6 +1,2 @@
 
 #include "../../../config/keymap.keymap"
-
-&xy_listener {
-    x-invert; // 横方向の反転
-};
