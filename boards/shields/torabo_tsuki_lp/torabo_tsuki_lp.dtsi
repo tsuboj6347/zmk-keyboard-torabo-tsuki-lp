@@ -160,7 +160,3 @@
     kscan = <&kscan0>;
     transform = <&size_l_transform>;
 };
-
-&xy_listener {
-    x-invert; // 横方向の反転
-};
