@@ -4,24 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        bt_clear {
-            bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
-            layers = <2>;
-        };
-    };
-
-    macros {
-        bt_reset: bt_reset {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_CLR_ALL>;
-            label = "BT_RESET";
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -38,11 +21,11 @@
 
         layer_1 {
             bindings = <
-&none  &none         &none            &none             &none                 &none                    &none                  &none                 &none      &none                &none                    &none
-&none  &none         &kp LS(N7)       &kp ASTERISK      &kp LEFT_PARENTHESIS  &none                    &kp ASTERISK           &kp LEFT_PARENTHESIS  &none      &kp LS(GRAVE)        &none                    &none
-&none  &none         &kp DOLLAR       &kp PERCENT       &kp AMPS              &none      &none  &none  &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)     &none      &kp LEFT_BRACKET     &kp LS(INTERNATIONAL_1)  &none
-&none  &kp QUESTION  &kp EXCLAMATION  &kp LS(NUMBER_2)  &kp HASH              &kp TILDE  &none  &none  &kp RIGHT_BRACKET      &kp BACKSLASH         &kp SLASH  &kp INTERNATIONAL_3  &none                    &none
-&none  &none         &none            &none             &none                 &none      &none  &none  &none                  &none                 &none      &none                &none                    &none
+&none  &none         &none            &none             &none                 &none                            &none                  &none                 &none      &none                &none                    &none
+&none  &none         &kp LS(N7)       &kp ASTERISK      &kp LEFT_PARENTHESIS  &none                            &kp ASTERISK           &kp LEFT_PARENTHESIS  &none      &kp LS(GRAVE)        &none                    &none
+&none  &none         &kp DOLLAR       &kp PERCENT       &kp AMPS              &none      &none          &none  &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)     &none      &kp LEFT_BRACKET     &kp LS(INTERNATIONAL_1)  &none
+&none  &kp QUESTION  &kp EXCLAMATION  &kp LS(NUMBER_2)  &kp HASH              &kp TILDE  &kp BACKSPACE  &none  &kp RIGHT_BRACKET      &kp BACKSLASH         &kp SLASH  &kp INTERNATIONAL_3  &none                    &none
+&none  &none         &none            &none             &none                 &none      &none          &none  &none                  &none                 &none      &none                &none                    &none
             >;
         };
 
@@ -58,21 +41,21 @@
 
         layer_3 {
             bindings = <
-&none  &none  &none  &none  &none  &none                &none     &none           &none           &none      &none    &none
-&none  &none  &none  &none  &none  &none                &none     &kp TAB         &kp UP_ARROW    &kp TAB    &none    &none
-&none  &none  &none  &none  &none  &none  &none  &none  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp END  &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none     &none           &none           &none      &none    &none
-&none  &none  &none  &none  &none  &none  &none  &none  &none     &none           &none           &none      &none    &none
+&none  &none  &none  &none  &none  &none                        &none     &none           &none           &none      &none    &none
+&none  &none  &none  &none  &none  &none                        &none     &kp TAB         &kp UP_ARROW    &kp TAB    &none    &none
+&none  &none  &none  &none  &none  &none  &none          &none  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp END  &none
+&none  &none  &none  &none  &none  &none  &kp BACKSPACE  &none  &none     &none           &none           &none      &none    &none
+&none  &none  &none  &none  &none  &none  &none          &none  &none     &none           &none           &none      &none    &none
             >;
         };
 
         layer_4 {
             bindings = <
-&none  &none      &none      &none      &none           &none                &none      &none               &none                   &none     &none           &none
-&none  &none      &none      &mkp MB4   &mkp MB5        &none                &kp LC(Y)  &kp LC(UP_ARROW)    &kp LS(LC(UP_ARROW))    &none     &none           &none
-&none  &kp LC(Y)  &kp LC(S)  &none      &kp LC(F)       &none  &none  &none  &none      &mkp MB1            &mkp MB3                &mkp MB2  &none           &none
-&none  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)       &none  &none  &none  &none      &kp LC(DOWN_ARROW)  &kp LS(LC(DOWN_ARROW))  &none     &none           &none
-&none  &none      &none      &none      &kp LEFT_SHIFT  &none  &none  &none  &none      &none               &none                   &none     &bt BT_CLR_ALL  &none
+&none  &none      &none      &none      &none           &none                        &none      &none               &none                   &none     &none           &none
+&none  &none      &none      &mkp MB4   &mkp MB5        &none                        &kp LC(Y)  &kp LC(UP_ARROW)    &kp LS(LC(UP_ARROW))    &none     &none           &none
+&none  &kp LC(Y)  &kp LC(S)  &none      &kp LC(F)       &none  &none          &none  &none      &mkp MB1            &mkp MB3                &mkp MB2  &none           &none
+&none  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)       &none  &kp BACKSPACE  &none  &none      &kp LC(DOWN_ARROW)  &kp LS(LC(DOWN_ARROW))  &none     &none           &none
+&none  &none      &none      &none      &kp LEFT_SHIFT  &none  &none          &none  &none      &none               &none                   &none     &bt BT_CLR_ALL  &none
             >;
         };
     };
