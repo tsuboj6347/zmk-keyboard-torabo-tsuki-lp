@@ -1,2 +1,8 @@
 
 #include "../../../config/keymap.keymap"
+
+&i2c1 {
+    trackpad_invert: iqs7211e@44 {
+        h-invert;
+    };
+};
