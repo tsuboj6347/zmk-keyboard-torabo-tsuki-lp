@@ -6,7 +6,6 @@
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
 
-/* 左側のトラックパッドのスクロールのみ左右反転 */
-&{/input-listener_1} {
-    input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>;
+&iqs7211e {
+    h-invert;
 };
