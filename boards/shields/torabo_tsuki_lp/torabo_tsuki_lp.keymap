@@ -3,7 +3,11 @@
 
 &i2c1 {
     iqs7211e@44 {
-        reg = <0x44>; // エラー回避のためにアドレスを明記
-        h-invert;    // のぎけす屋ドライバの「左右反転」を注入
+        reg = <0x44>;
+        
+        /* 1. 先ほどの h-invert; は削除（念のため） */
+        
+        /* 2. トラックパッドの出力（カーソル・スクロール両方）のX軸を反転させる */
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
     };
 };
