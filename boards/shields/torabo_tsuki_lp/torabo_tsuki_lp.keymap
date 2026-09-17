@@ -2,7 +2,8 @@
 #include "../../../config/keymap.keymap"
 
 &i2c1 {
-    trackpad_invert: iqs7211e@44 {
-        h-invert;
+    iqs7211e@44 {
+        reg = <0x44>; // エラー回避のためにアドレスを明記
+        h-invert;    // のぎけす屋ドライバの「左右反転」を注入
     };
 };
