@@ -1,15 +1,13 @@
 
 #include "../../../config/keymap.keymap"
 
-/* ファイルの最末尾にこれをそのまま貼り付けます */
+/ {
+    /* 左手（子機）に書き込まれたときだけ、トラックパッドから出るスクロール信号の左右（X軸）を強制反転する */
+    trackpad_reverse_listener {
+        compatible = "zmk,input-listener";
+        device = <&i2c1>; // トラックパッドが繋がっている左手I2Cバスを監視
 
-/* 1. 左手トラックパッドが内部で生成する標準リスナー（&input_listener）を直接上書き */
-&input_listener {
-    /* スクロールデータの左右（X軸）のみを反転させる */
-    input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>;
-};
-
-/* 2. 万が一、上記で「undefined node label 'input_listener'」が出る場合の保険 */
-&pointing_listener {
-    /* 右手トラックボールの入力はそのまま（既存のoverlayの設定とバッティングさせないための空記述） */
+        /* スクロールデータの左右（X軸）のみを反転させてOSへ送る */
+        input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>;
+    };
 };
