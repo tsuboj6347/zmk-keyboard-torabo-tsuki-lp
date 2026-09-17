@@ -1,15 +1,14 @@
 
 #include "../../../config/keymap.keymap"
 
-/* 【完全解決】左手（子機）から飛んでくるトラックパッドのデータを、右手（親機）側でキャッチして左右反転させる */
-&i2c1 {
-    iqs7211e@44 {
-        reg = <0x44>;
+/* ファイルの最末尾にこれをそのまま貼り付けます */
+/ {
+    /* 右手（親機）のビルド時のみ、左手から受信するスプリットデータのX軸（左右）を反転する */
+    input_relay_invert {
+        compatible = "zmk,split-peripheral-input-relay";
+        status = "okay";
+        
+        /* 受信した全データの左右（X軸）のみを反転 */
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
     };
-};
-
-/* 左手（子機）から飛んでくる無線入力（スプリット）のリスナーを上書き */
-&pointing_split_listener {
-    /* 左手から受信したデータ全体の、左右（X軸）のみを反転させる */
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
 };
