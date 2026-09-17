@@ -5,7 +5,3 @@
 &pointing_listener {
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
-
-&iqs7211e {
-    h-invert;
-};
