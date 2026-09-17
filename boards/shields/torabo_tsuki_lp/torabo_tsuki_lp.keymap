@@ -1,13 +1,21 @@
 
 #include "../../../config/keymap.keymap"
 
+/* 【最終解決】左手のトラックパッドのみ、リスナーを新設して左右反転させる記述 */
 &i2c1 {
     iqs7211e@44 {
         reg = <0x44>;
+        /* デバイス内の input-processors は効かないので削除 */
+    };
+};
+
+/* トラックパッド専用の「2番目のリスナー」をここに新設します */
+/ {
+    trackpad_listener {
+        compatible = "zmk,input-listener";
+        device = <&i2c1>; // 大元のI2Cポート（左手のデバイス群）を監視対象にする
         
-        /* 1. 先ほどの h-invert; は削除（念のため） */
-        
-        /* 2. トラックパッドの出力（カーソル・スクロール両方）のX軸を反転させる */
+        /* ここでスクロール（およびカーソル）の左右のみを反転！ */
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
     };
 };
