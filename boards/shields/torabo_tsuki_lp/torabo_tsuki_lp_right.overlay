@@ -19,3 +19,9 @@
 &size_l_transform {
     col-offset = <7>;
 };
+
+/* 拡張トラックパッド（iqs7211e）専用の入力処理を定義して割り当てる */
+&iqs7211e {
+    // トラックパッド単体のX軸を反転。Y軸はトラックボールと同じにするなら反転、そのままなら未指定
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+};
