@@ -1,0 +1,4 @@
+name: input-trackpad-scroll-invert
+
+append:
+  EXTRA_DTC_OVERLAY_FILE: input-trackpad-scroll-invert.overlay
