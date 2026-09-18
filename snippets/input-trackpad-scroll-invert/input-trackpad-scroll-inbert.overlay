@@ -1,0 +1,8 @@
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+
+&pointing_device_split {
+    input-processors = <
+        &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)
+    >;
+};
