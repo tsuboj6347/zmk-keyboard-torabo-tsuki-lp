@@ -1,13 +1,2 @@
 
 #include "../../../config/keymap.keymap"
-
-/ {
-    /* 左手（子機）に書き込まれたときだけ、トラックパッドから出るスクロール信号の左右（X軸）を強制反転する */
-    trackpad_reverse_listener {
-        compatible = "zmk,input-listener";
-        device = <&i2c1>; // トラックパッドが繋がっている左手I2Cバスを監視
-
-        /* スクロールデータの左右（X軸）のみを反転させてOSへ送る */
-        input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>;
-    };
-};
