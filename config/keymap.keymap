@@ -23,7 +23,7 @@
             bindings = <
 &none  &none         &none            &none             &none                 &none                            &none                  &none                 &none      &none                &none                    &none
 &none  &none         &kp LS(N7)       &kp ASTERISK      &kp LEFT_PARENTHESIS  &none                            &kp ASTERISK           &kp LEFT_PARENTHESIS  &none      &kp LS(GRAVE)        &none                    &none
-&none  &none         &kp DOLLAR       &kp PERCENT       &kp AMPS              &none      &none          &none  &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)     &none      &kp LEFT_BRACKET     &kp LS(INTERNATIONAL_1)  &none
+&none  &none         &kp DOLLAR       &kp PERCENT       &kp CARET             &none      &none          &none  &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)     &none      &kp LEFT_BRACKET     &kp LS(INTERNATIONAL_1)  &none
 &none  &kp QUESTION  &kp EXCLAMATION  &kp LS(NUMBER_2)  &kp HASH              &kp TILDE  &kp BACKSPACE  &none  &kp RIGHT_BRACKET      &kp BACKSLASH         &kp SLASH  &kp INTERNATIONAL_3  &none                    &none
 &none  &none         &none            &none             &none                 &none      &none          &none  &none                  &none                 &none      &none                &none                    &none
             >;
